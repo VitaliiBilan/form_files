@@ -1,10 +1,10 @@
 <?php
 ini_set('upload_max_filesize', '2M');
 if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
-    if ($_FILES['inputfile']['error'] == UPLOAD_ERR_OK && $_FILES['inputfile']['type'] == 'image/jpeg') { //проверка на наличие ошибок
-        $destiation_dir = dirname(__FILE__) . '/img/' . $_FILES['inputfile']['name']; // директория для размещения файла
-        if (move_uploaded_file($_FILES['inputfile']['tmp_name'], $destiation_dir)) { //перемещение в желаемую директорию
-            echo 'File Uploaded'; //оповещаем пользователя об успешной загрузке файла
+    if ($_FILES['inputfile']['error'] == UPLOAD_ERR_OK && $_FILES['inputfile']['type'] == 'image/jpeg') {
+        $destiation_dir = dirname(__FILE__) . '/img/' . $_FILES['inputfile']['name'];
+        if (move_uploaded_file($_FILES['inputfile']['tmp_name'], $destiation_dir)) {
+            echo 'File Uploaded';
 
         } else {
             echo 'File not uploaded';
