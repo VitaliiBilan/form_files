@@ -36,6 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
     <label for="inputfile">Upload File</label>
     <input type="file" id="inputfile" name="inputfile">
     <input type="submit" value="Click To Upload">
+    <ul>
+        <li><?php echo $_FILES['inputfile']['name'];?></li>
+    </ul>
 </form>
 </body>
 </html>
